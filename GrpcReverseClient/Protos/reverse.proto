@@ -1,0 +1,17 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "GrpcReverseClient";
+
+package reverse;
+
+service Reverse {
+	rpc ReverseString (StringRequest) returns (StringResponse);
+}
+
+message StringRequest {
+	string to_reverse = 1;
+}
+
+message StringResponse {
+	string reversed_string = 1;
+}
